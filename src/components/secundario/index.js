@@ -1,10 +1,15 @@
 import React from 'react';
 
 const Secundario = ({Sub}) => {
+    
+    const redirect = () => {
+        window.location.href = Sub.url;
+    }
+
     return (
-        <li className='subcat-items-content'>
+        <li className='subcat-items-content' onClick={redirect}>
             <div>
-                <a href={Sub.url}>{Sub.name}</a>
+                <b> > </b>{Sub.name}
             </div>
         </li>
     );

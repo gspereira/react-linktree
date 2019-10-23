@@ -41,7 +41,7 @@ function App() {
         <div className='Wrapper'>
             <div className='items'>
                 <div className='items-head'>
-                    <p>Link Tree</p>
+                    <p>Linktree Dashboard</p>
                     <hr/>
                 </div>
                 {categoria.map( (x, y) => {
