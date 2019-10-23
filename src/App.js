@@ -1,26 +1,55 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './app.css';
+import Primario from './components/primario';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const categoria = ['Primeiro', 'Segundo', 'Terceiro'];
+    const subcategorias = [
+        [
+            {
+                name : 'Primeiro.primeiro',
+                url : 'Primeiro.primeiro'
+            },
+            {
+                name : 'Primeiro.segundo',
+                url : 'Primeiro.segundo'
+            }
+        ],
+        [
+            {
+                name : 'Segundo.primeiro',
+                url : 'Segundo.primeiro'
+            },
+            {
+                name : 'Segundo.segundo',
+                url : 'Segundo.segundo'
+            }
+        ],
+        [
+            {
+                name : 'Terceiro.primeiro',
+                url : 'Terceiro.primeiro'
+            },
+            {
+                name : 'Terceiro.segundo',
+                url : 'Terceiro.segundo'
+            }
+        ]
+    ];
+
+    return(
+        <div className='Wrapper'>
+            <div className='items'>
+                <div className='items-head'>
+                    <p>Link Tree</p>
+                    <hr/>
+                </div>
+                {categoria.map( (x, y) => {
+                    return <Primario Cat={x} Sub={subcategorias[y]} key={x} />;
+                })}
+            </div>
+        </div>
+    );
 }
 
 export default App;
